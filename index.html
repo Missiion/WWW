@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>☁️ Caravela's Website! ☁️</title>
+	<link rel="stylesheet" href="relogio.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap');
 
@@ -201,13 +202,22 @@
         <a href="https://anilist.co/user/Caravela/" target="_blank" class="button">
             <img src="https://raw.githubusercontent.com/Missiion/WWW/main/TiDKFbu.png?&width=914&height=683" alt="Anilist"><span>Anilist</span>
         </a>
-	<a href="https://www.paypal.com/paypalme/Jokukopt" target="_blank" class="button">
-	    <img src="https://raw.githubusercontent.com/Missiion/WWW/main/PayPal_Logo_Icon_2014.svg.png?&width=914&height=683" alt="PayPal"><span>PayPal</span>
-	</a>
+		<a href="https://www.paypal.com/paypalme/Jokukopt" target="_blank" class="button">
+			<img src="https://raw.githubusercontent.com/Missiion/WWW/main/PayPal_Logo_Icon_2014.svg.png?&width=914&height=683" alt="PayPal"><span>PayPal</span>
+		</a>
     </div>
     <img src="https://i.postimg.cc/HnV05pcR/by88b.png" alt="Example Image">
 	<img src="https://raw.githubusercontent.com/Missiion/WWW/main/QXg6RnL.gif" alt="Small GIF" class="small-gif">
-    
+    <div id="clock">
+        <p class="date">{{ date }}</p>
+        <p class="time">{{ time }}</p>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="relogio.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+	
     <!-- Music menu -->
     <div class="music-menu">
         <button id="bgButton" title="Rain Toggle"><img src="https://raw.githubusercontent.com/Missiion/WWW/main/765uy5.png?&format=webp&quality=lossless&width=40&height=40" alt="Rain OFF"></button>
