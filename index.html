@@ -1,400 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>☁️ Caravela's Website! ☁️</title>
-	<link rel="stylesheet" href="relogio.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&display=swap');
-
-        body {
-            text-align: center;
-            font-family: 'Roboto', sans-serif;
-            background-color: #0f1a27;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
-        h1 {
-            font-size: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            margin-top: 20px;
-        }
-        img {
-            width: 600px;
-            height: auto;
-        }
-		.small-gif {
-			width: 170px;
-			height: auto;
-			position: absolute;
-			right: 10px; /* Ajuste a posição conforme necessário */
-			bottom: 50px; /* Ajuste a posição conforme necessário */
-			z-index: 1; /* Garante que o gif fique acima dos botões do menu */
-		}
-        p {
-            line-height: 0.3;
-            margin-bottom: 20px;
-        }
-        .larger-text {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        .button-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .button {
-            display: inline-block;
-            margin: 0 10px;
-            padding: 6px 12px;
-            background-color: rgba(51, 51, 51, 0.1); /* Background color with reduced opacity */
-            color: #fff;
-            border-radius: 5px;
-            text-decoration: none;
-            font-family: Arial, sans-serif;
-            font-size: 14px;
-            transition: background-color 0.3s ease;
-            position: relative;
-        }
-        .button img {
-            width: 24px;
-            height: auto;
-            position: absolute;
-            left: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-        }
-        .button span {
-            margin-left: 40px;
-        }
-        .button:hover {
-            background-color: rgba(51, 51, 51, 0.9); /* Background color with increased opacity on hover */
-        }
-        .music-menu {
-            position: fixed;
-            bottom: 0;
-            right: 0;
-            background-color: rgba(0, 0, 0, 0.8);
-            padding: 10px;
-            border-radius: 10px 10px 0 0; /* Rounded top corners */
-            font-size: 14px;
-            z-index: 999; /* Ensure the menu appears on top of other elements */
-        }
-        .music-menu button {
-            background-color: transparent;
-            border: none;
-            color: #ffffff;
-            cursor: pointer;
-        }
-        .music-menu button img {
-            width: 15px; /* Adjust the width as needed */
-            height: 15px; /* Adjust the height as needed */
-        }
-        .music-menu input[type="range"] {
-            width: 100px;
-            margin-left: 10px;
-            vertical-align: middle;
-        }
-
-        /* Styling for the rain overlay video */
-        #rain-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1; /* Ensure the video is behind other content */
-            display: none; /* Initially hide the video */
-        }
-		
-        /* CSS para a animação fade in */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        /* Aplicar animação fade in ao h1 */
-        h1 {
-            font-size: 3rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 700;
-            margin-top: 20px;
-            animation: fadeIn 2s ease-in-out; /* Adicionando a animação */
-        }
-
-        /* Estilos adicionais */
-        body {
-            text-align: center;
-            font-family: 'Roboto', sans-serif;
-            background-color: #0f1a27;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden; /* Prevent horizontal scroll */
-        }
-
-        /* Adicione mais estilos aqui, se necessário */
-		
-		/* Estilos para o toggle de idioma */
-        .language-toggle {
-            position: fixed;
-            bottom: 2px;
-            left: 2px;
-            background-color: rgba(51, 51, 51, 0.1);
-            padding: 10px;
-            border-radius: 5px;
-            z-index: 999;
-        }
-
-        .language-toggle button {
-            background-color: transparent;
-            border: none;
-            color: #ffffff;
-            cursor: pointer;
-            font-size: 14px;
-            margin: 0 5px;
-        }
-
-        .language-toggle button.active {
-            font-weight: bold;
-        }
-		.flag {
-			width: 18px;
-			height: auto;
-			vertical-align: middle;
-		}
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>☁️ Caravela's Corner! ☁️</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 id="headerText">
-        ✨ Welcome to my website ✨
-    </h1>
-    <p id="greetingText" class="larger-text">Hello there!</p>
-	<p id="introText">I'm Leonardo, I like anime, music, nature, and computer-related things.</p>
-	<p id="descriptionText">I like talking and meeting new people, feel free to add me on discord!</p>
-	<p id="invitationText">Below you will find a bunch of links with my lists and more.</p>
+    <div class="content-wrapper">
+        <h1 id="headerText">
+            <!-- Content set by JavaScript -->
+        </h1>
+        <div class="text-intro-container">
+            <p id="greetingText" class="larger-text animated-text">Hi, I'm Leo! Nice to meet you.</p>
+            <p id="introText" class="animated-text intro-paragraph-styled">I'm into all sorts of things, like a good anime series, discovering new music, enjoying nature, and pretty much anything computer-related.</p>
+            <p id="descriptionText" class="animated-text intro-paragraph-styled">Just a regular person trying to figure things out and sharing some thoughts along the way.</p>
+            <p id="invitationText" class="animated-text intro-paragraph-styled">I consider myself pretty approachable and I enjoy chatting and making new friends, so feel free to reach out!</p>
+        </div>
 
-    <div class="button-container">
-        <a href="https://discordid.netlify.app/?id=957304487310151702" target="_blank" class="button">
-            <img src="https://cdn.discordapp.com/emojis/1087876127575515146.webp?size=96&quality=lossless" alt="Discord"><span>Discord</span>
-        </a>
-        <a href="https://open.spotify.com/user/21a3nuzhqtllfvtzjc7scnnnq?si=7ae73ba3bdca4203" target="_blank" class="button">
-            <img src="https://cdn.discordapp.com/emojis/1098032961921744998.webp?size=96&quality=lossless" alt="Spotify"><span>Spotify</span>
-        </a>
-        <a href="https://letterboxd.com/Tafixe/" target="_blank" class="button">
-            <img src="https://raw.githubusercontent.com/Missiion/WWW/main/6rbak1Q.png?&width=683&height=683" alt="Letterboxd"><span>Letterboxd</span>
-        </a>
-        <a href="https://anilist.co/user/Caravela/" target="_blank" class="button">
-            <img src="https://raw.githubusercontent.com/Missiion/WWW/main/TiDKFbu.png?&width=914&height=683" alt="Anilist"><span>Anilist</span>
-        </a>
-	<a href="https://backloggd.com/u/Caravela/games/user-rating/" target="_blank" class="button">
-		<img src="https://raw.githubusercontent.com/Missiion/WWW/main/bkloggd.png?&width=914&height=683" alt="Backloggd"><span>Backloggd</span>
-	 </a>
-	<a href="https://trakt.tv/users/caravelaa/lists/i-saw-it?sort=rank,asc" target="_blank" class="button">
-		<img src="https://raw.githubusercontent.com/Missiion/WWW/refs/heads/main/tracttt.png?&width=914&height=683" alt="Trakt"><span>Trakt</span>
-	</a>
-	<a href="https://www.paysafecard.com/pt-pt/comprar-paysafecard-online/" target="_blank" class="button">
-		<img src="https://raw.githubusercontent.com/Missiion/WWW/refs/heads/main/psc.png?&width=914&height=683" alt="Doações"><span>Doações</span>
-	</a>
-    </div>
-    <img src="https://i.postimg.cc/HnV05pcR/by88b.png" alt="Example Image">
-	<img src="https://raw.githubusercontent.com/Missiion/WWW/main/QXg6RnL.gif" alt="Small GIF" class="small-gif">
-    <div id="clock">
-        <p class="date">{{ date }}</p>
-        <p class="time">{{ time }}</p>
+        <div class="button-container">
+            <a href="https://discordid.netlify.app/?id=957304487310151702" target="_blank" class="button">
+                <img src="https://cdn.discordapp.com/emojis/1087876127575515146.webp?size=96&quality=lossless" alt="Discord"><span>Discord</span>
+            </a>
+            <a href="https://open.spotify.com/user/21a3nuzhqtllfvtzjc7scnnnq?si=7ae73ba3bdca4203" target="_blank" class="button">
+                <img src="https://cdn.discordapp.com/emojis/1098032961921744998.webp?size=96&quality=lossless" alt="Spotify"><span>Spotify</span>
+            </a>
+            <a href="https://letterboxd.com/Tafixe/" target="_blank" class="button">
+                <img src="https://raw.githubusercontent.com/Missiion/WWW/main/6rbak1Q.png?width=683&height=683" alt="Letterboxd"><span>Letterboxd</span>
+            </a>
+            <a href="https://anilist.co/user/Caravela/" target="_blank" class="button">
+                <img src="https://raw.githubusercontent.com/Missiion/WWW/main/TiDKFbu.png?width=914&height=683" alt="Anilist"><span>Anilist</span>
+            </a>
+            <a href="https://trakt.tv/users/caravelaa/lists/i-saw-it?sort=rank,asc" target="_blank" class="button">
+                <img src="https://raw.githubusercontent.com/Missiion/WWW/refs/heads/main/tracttt.png?width=914&height=683" alt="Trakt"><span>Trakt</span>
+            </a>
+            <a href="https://backloggd.com/u/Caravela/games/user-rating/" target="_blank" class="button">
+                <img src="https://raw.githubusercontent.com/Missiion/WWW/main/bkloggd.png?width=914&height=683" alt="Backloggd"><span>Backloggd</span>
+            </a>
+        </div>
+
+        <div class="parallax-container">
+            <img src="https://i.postimg.cc/HnV05pcR/by88b.png" alt="Main decorative image" class="main-image parallax-image">
+        </div>
+
+        <div id="clock">
+            <p class="date"></p>
+            <p class="time"></p>
+        </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="relogio.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono&display=swap" rel="stylesheet">
-	
-    <!-- Music menu -->
+    <img src="https://raw.githubusercontent.com/Missiion/WWW/main/QXg6RnL.gif" alt="Small animated GIF" class="small-gif">
+
     <div class="music-menu">
-        <button id="bgButton" title="Rain Toggle"><img src="https://raw.githubusercontent.com/Missiion/WWW/main/765uy5.png?&format=webp&quality=lossless&width=40&height=40" alt="Rain OFF"></button>
-        <button id="playPauseButton" title="Music Controler"><img src="https://raw.githubusercontent.com/Missiion/WWW/main/iu6iuj6i6.png?&format=webp&quality=lossless&width=40&height=40" alt="Pause"></button>
-        <button id="randomButton" title="Up Next"><img src="https://raw.githubusercontent.com/Missiion/WWW/main/o9o98o98.png?&format=webp&quality=lossless&width=24&height=24" alt="Random"></button>
-        <input type="range" id="volumeSlider" min="0" max="100" value="5">
-        <span id="currentMusic">Fly Me To The Moon by Nursena Yener</span>
+        <button id="bgButton" title="Rain Toggle"><img src="https://raw.githubusercontent.com/Missiion/WWW/main/86765765.png?format=webp&quality=lossless&width=40&height=40" alt="Rain OFF"></button>
+        <button id="playPauseButton" title="Music Controller"><img src="https://raw.githubusercontent.com/Missiion/WWW/main/i8iiiiiiiiiiiii.png?quality=lossless&width=40&height=40" alt="Play"></button>
+        <button id="randomButton" title="Up Next"><img src="https://raw.githubusercontent.com/Missiion/WWW/main/o9o98o98.png?format=webp&quality=lossless&width=24&height=24" alt="Random"></button>
+        <input type="range" id="volumeSlider" min="0" max="100" value="3">
+        <div class="current-music-container"> <!-- Wrapper for current music and popup -->
+            <span id="currentMusic"></span>
+            <div class="music-playlist-popup">
+                <ul id="musicPlaylistItems">
+                    <!-- Music items will be populated by JavaScript -->
+                </ul>
+            </div>
+        </div>
     </div>
-	
-	<!-- Toggle Lingua -->
-	<div class="language-toggle">
+
+    <div class="language-toggle">
         <button id="enButton" class="active"><img src="https://em-content.zobj.net/source/google/387/flag-united-kingdom_1f1ec-1f1e7.png" alt="English" class="flag"> ᴇɴ</button>
         <button id="ptButton"><img src="https://em-content.zobj.net/source/google/387/flag-portugal_1f1f5-1f1f9.png" alt="Português" class="flag"> ᴘᴛ</button>
     </div>
 
-    <!-- Rain overlay video (Deve conter "muted" para funcionar no chrome!)-->
     <video id="rain-overlay" autoplay loop muted>
         <source src="https://github.com/Missiion/WWW/raw/main/Rain%20Overlay%20Transparent%20Video.webm" type="video/webm">
         Your browser does not support the video tag.
     </video>
 
-    <!-- Background music -->
-    <audio id="backgroundMusic" src="" autoplay loop></audio>
+    <audio id="backgroundMusic" loop></audio>
 
- <!DOCTYPE html>
-<html>
-<head>
-    <title>Hello there! Welcome to my website</title>
-    <!-- styles omitted for brevity -->
-</head>
-    <script>
-        const playPauseButton = document.getElementById('playPauseButton');
-        const randomButton = document.getElementById('randomButton');
-        const currentMusic = document.getElementById('currentMusic');
-        const backgroundMusic = document.getElementById('backgroundMusic');
-        const volumeSlider = document.getElementById('volumeSlider');
-        const bgButton = document.getElementById('bgButton');
-        const rainOverlay = document.getElementById('rain-overlay');
-		const enButton = document.getElementById('enButton');
-        const ptButton = document.getElementById('ptButton');
-		const headerText = document.getElementById('headerText');
-        const greetingText = document.getElementById('greetingText');
-        const introText = document.getElementById('introText');
-        const descriptionText = document.getElementById('descriptionText');
-        const invitationText = document.getElementById('invitationText');
-		const userLanguage = navigator.language || navigator.userLanguage;
-
-        const musicList = [
-            { name: 'Fly Me To The Moon by Nursena Yener', src: 'https://github.com/Missiion/WWW/raw/main/Fly%20Me%20To%20The%20Moon%20by%20Nursena%20Yener.mp3' },
-            { name: 'Lost Chapter: Acoustic', src: 'https://github.com/Missiion/WWW/raw/main/Lightbringer%20(Acoustic)%20%20Pentakill%20III-%20Lost%20Chapter%20%20Riot%20Games%20Music.mp3' },
-            { name: 'CAPAREZZA - EL SENDERO', src: 'https://github.com/Missiion/WWW/raw/main/CAPAREZZA%20-%20EL%20SENDERO%20(feat.%20Mishel%20Domenssain).mp3' },
-            { name: 'Teddy Swims - Lose Control', src: 'https://github.com/Missiion/WWW/raw/main/Teddy%20Swims%20-%20Lose%20Control%20(Official%20Audio).mp3' },
-            { name: '1 Thing Piano - Remix', src: 'https://github.com/Missiion/WWW/raw/main/spotifydown.com%20-%201%20Thing%20Piano%20-%20Remix.mp3' },
-            { name: 'Day \'n\' Nite', src: 'https://github.com/Missiion/WWW/raw/main/spotifydown.com%20-%20Day%20\'n\'%20Nite.mp3' },
-            { name: 'Outra Metade', src: 'https://github.com/Missiion/WWW/raw/main/spotifydown.com%20-%20Outra%20Metade.mp3' },
-            { name: 'Stay Fly', src: 'https://github.com/Missiion/WWW/raw/main/spotifydown.com%20-%20Stay%20Fly.mp3' },
-            { name: 'Rain and Thunder Background', src: 'https://github.com/Missiion/WWW/raw/main/Rain-and-thunder-loop.mp3' },
-        ];
-
-        let currentIndex;
-
-        function selectRandomMusic() {
-            currentIndex = Math.floor(Math.random() * musicList.length);
-            const selectedMusic = musicList[currentIndex];
-            currentMusic.textContent = selectedMusic.name;
-            backgroundMusic.src = selectedMusic.src;
-            backgroundMusic.play();
-        }
-
-        function playNextMusic() {
-            currentIndex = (currentIndex + 1) % musicList.length;
-            const selectedMusic = musicList[currentIndex];
-            currentMusic.textContent = selectedMusic.name;
-            backgroundMusic.src = selectedMusic.src;
-            backgroundMusic.play();
-        }
-
-        // Initial random music selection
-        selectRandomMusic();
-
-        // Play/pause functionality
-        let isPlaying = true;
-        playPauseButton.addEventListener('click', () => {
-            if (isPlaying) {
-                backgroundMusic.pause();
-                playPauseButton.innerHTML = '<img src="https://raw.githubusercontent.com/Missiion/WWW/main/i8iiiiiiiiiiiii.png?&quality=lossless&width=40&height=40" alt="Play">';
-                randomButton.style.display = 'none'; // Hide the "Random" button
-                isPlaying = false;
-            } else {
-                backgroundMusic.play();
-                playPauseButton.innerHTML = '<img src="https://raw.githubusercontent.com/Missiion/WWW/main/ji7jjojo798.png?&format=webp&quality=lossless&width=40&height=40" alt="Pause">';
-                randomButton.style.display = 'inline-block'; // Show the "Random" button
-                isPlaying = true;
-            }
-        });
-
-        // Play next music functionality
-        randomButton.addEventListener('click', playNextMusic);
-
-        // Hide the "Random" button initially
-        randomButton.style.display = 'none';
-
-        // Rain background toggle
-        let isRainOn = true;
-        bgButton.addEventListener('click', () => {
-            if (isRainOn) {
-                rainOverlay.style.display = 'none';
-                bgButton.innerHTML = '<img src="https://raw.githubusercontent.com/Missiion/WWW/main/86765765.png?&format=webp&quality=lossless&width=40&height=40">';
-                isRainOn = false;
-            } else {
-                rainOverlay.style.display = 'block';
-                bgButton.innerHTML = '<img src="https://raw.githubusercontent.com/Missiion/WWW/main/gggggg.png?&format=webp&quality=lossless&width=40&height=40">';
-                isRainOn = true;
-            }
-        });
-
-        // Volume adjustment functionality
-        const audio = document.getElementById("backgroundMusic");
-        audio.volume = 0.03; // Sets volume to 70%
-        volumeSlider.addEventListener('input', () => {
-            const volume = volumeSlider.value / 100;
-            audio.volume = volume;
-        });
-		
-		// Butões de tradução
-		enButton.addEventListener('click', () => {
-            enButton.classList.add('active');
-            ptButton.classList.remove('active');
-			headerText.textContent = '✨ Welcome to my website ✨';
-            greetingText.textContent = 'Hello there!';
-            introText.textContent = 'I am Leonardo, I like anime, music, nature, and computer-related things';
-            descriptionText.textContent = 'I like talking and meeting new people, feel free to add me on discord!';
-            invitationText.textContent = 'Below you will find a bunch of links with my lists and more.';
-        });
-
-        ptButton.addEventListener('click', () => {
-            ptButton.classList.add('active');
-            enButton.classList.remove('active');
-			headerText.textContent = '✨ Bem-vindo ao meu website ✨';
-            greetingText.textContent = 'Ora bom dia!';
-            introText.textContent = 'Eu sou o Leonardo, gosto de anime, música, natureza e coisas relacionadas à informática.';
-            descriptionText.textContent = 'Gosto de falar e conheçer pessoas novas, portanto estás á vontade para me adicionares no discord!';
-            invitationText.textContent = 'Em baixo vais encontrar varios links para as minhas listas e mais.';
-        });
-		// Função para verificar e definir o idioma ao carregar a página
-		function setLanguageOnLoad() {
-			const userLanguage = navigator.language || navigator.userLanguage;
-			if (userLanguage.startsWith('pt')) {
-				// Se o idioma do usuário for português, execute o código para definir o idioma para português
-				ptButton.classList.add('active');
-				enButton.classList.remove('active');
-				headerText.textContent = '✨ Bem-vindo ao meu website ✨';
-				greetingText.textContent = 'Ora bom dia!';
-				introText.textContent = 'Eu sou o Leonardo, gosto de anime, música, natureza e coisas relacionadas à informática.';
-				descriptionText.textContent = 'Gosto de falar e conheçer pessoas novas, portanto estás á vontade para me adicionares no discord!';
-				invitationText.textContent = 'Em baixo vais encontrar varios links para as minhas listas e mais.';
-			} else {
-				enButton.classList.add('active');
-				ptButton.classList.remove('active');
-				headerText.textContent = '✨ Welcome to my website ✨';
-				greetingText.textContent = 'Hello there!';
-				introText.textContent = 'I am Leonardo, I like anime, music, nature, and computer-related things';
-				descriptionText.textContent = 'I like talking and meeting new people, feel free to add me on discord!';
-				invitationText.textContent = 'Below you will find a bunch of links with my lists and more.';
-			}
-		}
-
-// Chame a função para definir o idioma ao carregar a página
-document.addEventListener('DOMContentLoaded', setLanguageOnLoad);
-    </script>
-</body>
-</html>
+    <script src="clock.js" defer></script>
+    <script src="main.js" defer></script>
 </body>
 </html>
