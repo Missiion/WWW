@@ -1,0 +1,410 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto:wght@400;700&family=Share+Tech+Mono&display=swap');
+
+/* CSS Custom Properties (Variables) */
+:root {
+    --primary-bg-color: #0f1a27;
+    --primary-bg-color-rgb: 15, 26, 39;
+    --text-color: #ffffff;
+    --accent-color: #daf6ff;
+    --accent-color-rgb: 218, 246, 255;
+
+    --shadow-color-glow: rgba(10, 175, 230, 1);
+    --shadow-color-glow-transparent: rgba(10, 175, 230, 0);
+
+    --font-body: 'Roboto', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-clock: 'Share Tech Mono', monospace;
+
+    --button-bg-color: rgba(51, 51, 51, 0.1);
+    --button-bg-hover-color: rgba(51, 51, 51, 0.9);
+
+    --spacing-unit: 15px;
+}
+
+/* General Styles */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #0f3854;
+    background: radial-gradient(ellipse at center, #002259 0%, #000000 80%);
+    background-size: 100%;
+    font-family: var(--font-body);
+    color: var(--text-color);
+    text-align: center;
+    overflow-x: hidden;
+    padding-top: calc(var(--spacing-unit) * 2);
+    padding-bottom: calc(var(--spacing-unit) * 3);
+}
+
+.content-wrapper {
+    position: relative;
+    z-index: 2;
+    width: 90%;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--spacing-unit);
+    padding-right: var(--spacing-unit);
+    box-sizing: border-box;
+}
+
+p {
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-size: 2.4rem;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    margin-top: var(--spacing-unit);
+    margin-bottom: calc(var(--spacing-unit) * 1.8);
+    animation: fadeIn 1.5s ease-in-out;
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* Text Intro Section */
+.text-intro-container {
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.text-intro-container p {
+    line-height: 1.6;
+    margin-bottom: var(--spacing-unit);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text-intro-container p.larger-text {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: calc(var(--spacing-unit) * 1.2);
+}
+
+.intro-paragraph-styled {
+    color: var(--text-color);
+    text-shadow: 0 0 8px rgba(var(--accent-color-rgb), 0.35), 0 0 12px rgba(var(--accent-color-rgb), 0.2);
+    font-weight: 400;
+}
+
+
+/* Animated Text */
+.animated-text {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: slideUpFadeIn 0.6s ease-out forwards;
+}
+.animated-text:nth-child(1) { animation-delay: 0.2s; }
+.animated-text:nth-child(2) { animation-delay: 0.45s; }
+.animated-text:nth-child(3) { animation-delay: 0.65s; }
+.animated-text:nth-child(4) { animation-delay: 0.85s; }
+
+
+/* Parallax Image Container & Image (3D Tilt Setup) */
+.parallax-container {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-height: 300px;
+}
+
+img.main-image.parallax-image {
+    width: 550px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.35);
+    opacity: 1;
+    transform: none;
+    transition: transform 0.1s linear;
+    will-change: transform;
+    position: relative;
+}
+
+.small-gif {
+    width: 150px;
+    height: auto;
+    position: fixed;
+    right: 15px;
+    bottom: 45px; /* Default position */
+    z-index: 998;
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+.small-gif.lifted-with-playlist {
+    transform: translateY(-200px); /* Adjust this value as needed */
+}
+
+
+/* Clock Styles */
+#clock {
+    font-family: var(--font-clock);
+    color: var(--accent-color);
+    text-align: center;
+    margin-top: calc(var(--spacing-unit) * 1.5);
+    margin-bottom: var(--spacing-unit);
+    text-shadow: 0 0 20px var(--shadow-color-glow), 0 0 20px var(--shadow-color-glow-transparent);
+}
+
+#clock .time {
+    letter-spacing: 0.05em;
+    font-size: 75px;
+    padding: 3px 0;
+}
+
+#clock .date {
+    letter-spacing: 0.1em;
+    font-size: 22px;
+    margin-bottom: var(--spacing-unit);
+}
+
+/* Button Styles */
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: calc(var(--spacing-unit) * 2);
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    margin: 6px 9px;
+    padding: 8px 14px;
+    background-color: var(--button-bg-color);
+    color: var(--text-color);
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    transition: background-color 0.3s ease, transform 0.2s ease-out;
+    backface-visibility: hidden;
+    transform: translateY(0px) scale(1);
+}
+
+.button img {
+    width: 22px;
+    height: auto;
+    margin-right: 7px;
+    flex-shrink: 0;
+}
+
+.button span {
+    white-space: nowrap;
+}
+
+.button:hover {
+    background-color: var(--button-bg-hover-color);
+    transform: translateY(-3px) scale(1.03);
+}
+
+
+/* Music Menu */
+.music-menu {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 8px;
+    border-radius: 10px 0 0 0;
+    font-size: 13px;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    box-shadow: -2px -2px 10px rgba(0,0,0,0.3);
+}
+
+.music-menu button {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    margin: 0 4px;
+    padding: 0;
+    transition: transform 0.2s ease;
+}
+.music-menu button:hover {
+    transform: scale(1.1);
+}
+
+.music-menu button img {
+    width: 18px;
+    height: 18px;
+    display: block;
+}
+#randomButton img {
+    width: 16px;
+    height: 16px;
+}
+
+.music-menu input[type="range"] {
+    width: 70px;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+.current-music-container {
+    position: relative;
+    display: inline-block;
+    margin-left: 8px;
+    vertical-align: middle;
+    /* No extra padding needed if the popup overlaps correctly */
+}
+
+#currentMusic {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+    display: inline-block;
+    cursor: default;
+}
+
+.music-playlist-popup {
+    position: absolute;
+    bottom: 100%; /* Bottom of playlist aligns with TOP of current-music-container */
+    right: 0;
+    /* Initial state: Start slightly "higher" (further up) and invisible */
+    transform: translateY(-10px); /* Start with its bottom 10px ABOVE the parent's top */
+    opacity: 0;
+    visibility: hidden; /* Hidden initially */
+    width: 260px;
+    max-height: 200px;
+    overflow-y: auto;
+    background-color: var(--primary-bg-color);
+    border: 1px solid rgba(var(--accent-color-rgb), 0.15);
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.4);
+    z-index: 1000;
+    pointer-events: none; /* Not interactive when hidden */
+    /* Slightly longer transition to give mouse more time */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0s 0.3s; /* Delay hiding visibility */
+}
+
+/* Simplified hover: when container is hovered, show popup */
+.current-music-container:hover .music-playlist-popup {
+    opacity: 1;
+    visibility: visible; /* Make visible */
+    /* Final position: Bottom of playlist is 5px *BELOW* parent's top (i.e., overlaps parent by 5px) */
+    transform: translateY(5px); /* << This creates a 5px downward overlap */
+    pointer-events: auto; /* Make interactive */
+    transition-delay: 0s; /* Override any delay for visibility when showing */
+}
+
+
+#musicPlaylistItems {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#musicPlaylistItems li {
+    padding: 7px 12px;
+    color: var(--text-color);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 3px;
+}
+#musicPlaylistItems li:last-child {
+    margin-bottom: 0;
+}
+
+#musicPlaylistItems li:hover {
+    background-color: rgba(var(--accent-color-rgb), 0.25);
+    color: var(--accent-color);
+}
+
+#musicPlaylistItems li.active-song {
+    background-color: rgba(var(--accent-color-rgb), 0.45);
+    color: var(--accent-color);
+    font-weight: 700;
+}
+
+
+/* Language Toggle */
+.language-toggle {
+    position: fixed;
+    bottom: 2px;
+    left: 2px;
+    background-color: var(--button-bg-color);
+    padding: 6px;
+    border-radius: 5px;
+    z-index: 999;
+}
+
+.language-toggle button {
+    background-color: transparent;
+    border: none;
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 13px;
+    margin: 0 4px;
+    padding: 4px;
+    transition: opacity 0.3s ease, transform 0.2s ease;
+}
+.language-toggle button:hover {
+    transform: scale(1.05);
+}
+.language-toggle button:not(.active) {
+    opacity: 0.6;
+}
+
+.language-toggle button.active {
+    font-weight: bold;
+    opacity: 1;
+}
+
+.language-toggle .flag {
+    width: 16px;
+    height: auto;
+    vertical-align: middle;
+    margin-right: 3px;
+}
+
+/* Rain Overlay */
+#rain-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    display: none;
+    pointer-events: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUpFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
